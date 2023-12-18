@@ -1,0 +1,9 @@
+<div>
+    <!-- <input [value]="data" type="text" placeholder="name please "> -->
+    <input [(ngModel)]="data" type="text" placeholder="name please ">
+    <button (click)="addName()">Add </button>
+</div>
+<ul>
+    <li *ngFor="let item of items; let i=index" >{{item}}</li>
+    <button delete(i) ></button>
+</ul>

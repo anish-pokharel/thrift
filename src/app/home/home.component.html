@@ -1,0 +1,96 @@
+<!-- <app-header></app-header> -->
+<!-- <div>
+    <div class="d-flex justify-content-beetween">
+
+        <div class="p-2">
+            item1
+        </div>
+        <div class="p-2">
+            item2
+        </div>
+    </div>
+</div> -->
+
+<div class="card ">
+    <div class="row h-100 ">
+        <div class="col-3 card rounded-4">
+            <div class="navbar-nav text-center" id="category">
+                <li class="nav-item" value="women's clothing">Women fashion</li>
+                <li value="">Healthy and beauty</li>
+                <li  value="men's clothing">Men's Fashion</li>
+                <li>Watches & Accessories</li>
+                <li  value="electronics">Electronic Device</li>
+                <li>Tv & Home Appliances</li>
+                <li>Groceries & Pets</li>
+                <li>Babies & Toys</li>
+                <li>Home & Lifestyle</li>
+                <li>Sports & Outdoor</li>
+                <li>Motors, Tools & Diy</li>
+            </div>
+        </div>
+        <div class="col-9 ">
+
+            <div id="carouselExample" class="carousel slide ">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="https://icms-image.slatic.net/images/ims-web/ec954053-9745-40f2-8317-98d5a62cb759.jpg"
+                            class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://icms-image.slatic.net/images/ims-web/58b3681c-dfeb-450a-8438-27844f80e87a.jpg"
+                            class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://icms-image.slatic.net/images/ims-web/8910bcc3-b9ea-4562-a50c-cd01d299b6a7.jpg"
+                            class="d-block w-100" alt="...">
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExample"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 
+<div class="row  bg-dark" style="height: 10rem;">
+    <div class="col-sm-12">
+        <div class="h-100">
+            <p h-25></p>
+        </div>
+    </div>
+</div> -->
+<div class="card">
+
+    <div class="row">
+        <div class="card col-sm-3  " *ngFor="let product of products">
+            <div class="card-image ">
+
+                <img src="{{product.image}}" style="height: 200px; object-fit: contain;" alt="" class="card-img-top">
+            </div>
+            <div class="card-body">
+                <div class="card-titile">
+                    <h5 class="card-title">{{product.title}}</h5>
+                </div>
+
+
+            </div>
+            <div class="card-text mx-3">
+                <p class="card-text"> <span class="fw-bold"> Price:</span><i class="fa fa-usd" aria-hidden="true"></i><span>{{product.price}}</span>  </p>
+            </div>
+            <div class="mx-3">
+                <a routerLink=""  class="" (click)="viewMoreProduct(product.id)" >ViewMore</a>
+                <!-- <a href="" class="mx-3" (click)="buyProduct()" >Buy</a> -->
+            </div>
+        </div>
+
+    </div>
+
+</div>

@@ -1,0 +1,87 @@
+<!-- 
+<div class="card m-3">
+    <div id="product" class="section-container p-t-20">
+        <div class="row border p-2 ">
+            <div class="col-md-6">
+                <div class="product">
+                    <div class="product-details">
+                        <div class="product-image">
+                            <div class="product-main-image">
+                            <img src="{{productImage}}" alt="img-fluid" style="height: 200px; width: 200px; object-fit: contain;">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+
+                <div class="product">
+                    <div class="product-details">
+                        <div class="product image">
+                            <div class="product-main-describe">
+                                Name<h4>{{productName}}</h4>
+                                <label for="">Rating</label><p>{{productRate}}</p>
+                                <span><i class="fa fa-usd" aria-hidden="true"></i>{{productPrice}}</span>
+
+                                <p for="">Quantity</p>
+                               <div class="input-group">
+                               
+                                    <input type="button"  value=""   class="btn btn-outline-secondary" (click)="increment()">+
+                               <span>{{count}}</span>
+                                    <input type="button"  value=""   class="btn btn-outline-secondary" (click)="decrement()">-
+
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> -->
+
+<div class="container mt-5">
+    <div class="row">
+        <!-- Product Image -->
+        <div class="col-md-6">
+            <img src="{{productImage}}" alt="Product Image" class="img-fluid" style="height: 300px;  width:300px;object-fit: contain; ">
+        </div>
+        <!-- Product Details -->
+        <div class="col-md-6">
+            <h2>{{productName}}</h2>
+            <!-- Rating -->
+            <div class="mb-3">
+                <span class="text-warning"><i class="fas fa-star"></i></span>
+                <span class="text-warning"><i class="fas fa-star"></i></span>
+                <span class="text-warning"><i class="fas fa-star"></i></span>
+                <span class="text-warning"><i class="fas fa-star"></i></span>
+                <span class="text-secondary"><i class="fas fa-star"></i></span>
+            </div>
+            <!-- Price and Quality -->
+            <p><strong>Price:</strong> {{productPrice}}</p>
+            <p><strong>Quality:</strong> High</p>
+            <!-- Quantity Selector -->
+            <div class="input-group mb-3" style="max-width: 120px;">
+                <!-- <div class="input-group-prepend">
+          <button class="btn btn-outline-secondary" (click)="decrement()" type="button" id="minus-btn"><i class="fas fa-minus"></i></button>
+        </div>
+        <input type="text" class="form-control text-center" value="1" id="quantity" readonly>{{count}}
+        <div class="input-group-append">
+          <button class="btn btn-outline-secondary" (click)="increment()" type="button" id="plus-btn"><i class="fas fa-plus" aria-hidden="true"></i></button>
+        </div> -->
+            </div>
+            <div class="button">
+
+                <button class="btn btn-primary mr-2" (click)="increment()">+</button>
+                <span class="mx-2"> {{count}}</span>
+                <button class="btn btn-success" (click)="decrement()">-</button>
+            </div>
+            <div class="my-2">
+
+                <!-- Buy Now and Add to Cart Buttons -->
+                <button class="btn btn-primary mr-2" (click)="signUp()" >Buy Now</button>
+                <button class="btn btn-success mx-2">Add to Cart</button>
+            </div>
+        </div>
+    </div>
+</div>

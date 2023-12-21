@@ -4,6 +4,26 @@
     <button (click)="addName()">Add </button>
 </div>
 <ul>
-    <li *ngFor="let item of items; let i=index" >{{item}}</li>
-    <button delete(i) ></button>
+    <li *ngFor="let item of items; let i=index">
+        {{ item }}
+        <button (click)="delete(i)">Delete</button>
+    </li>
 </ul>
+
+<!-- <div *ngFor="let country of countrtListshow">
+<p>{{country.name.common}}</p>
+<img [src]=country.flags.png alt="error" srcset="">
+</div>  -->
+<!-- this is parent -->
+
+<ul *ngFor="let data of userDetails" >
+<app-child [fata]="data" ></app-child>
+</ul>
+
+
+<!-- <app-child [val]="datas" ></app-child> -->
+<button (click)="updateChild()" >Update Child Component </button>
+
+
+<app-child (updateDataEvent)="updateData($event)" ></app-child>
+

@@ -1,0 +1,7 @@
+<!-- <p>{{val}}</p> -->
+
+<li>{{fata.name}}</li>
+<li>{{fata.email}}</li>
+
+<input type="text" #box>
+<button (click)="updateDataEvent.emit(box.value)" >Update Data</button>

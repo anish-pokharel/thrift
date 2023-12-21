@@ -1,0 +1,27 @@
+{
+  "login": [
+    {
+      "name": "anish",
+      "password": "anish123",
+      "id": 1
+    }
+  ],
+  "signup": [
+    {
+      "name": "facebook",
+      "password": "123456789",
+      "gender": "male",
+      "birthday": "2023-12-23",
+      "address": "pkr",
+      "id": 1
+    },
+    {
+      "name": "anish",
+      "password": "anish123",
+      "gender": "male",
+      "birthday": "1999-08-08",
+      "address": "bhw",
+      "id": 2
+    }
+  ]
+}

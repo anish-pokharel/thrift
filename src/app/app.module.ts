@@ -13,6 +13,7 @@ import { CartComponent } from './cart/cart.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { PractiseComponent } from './practise/practise.component';
 import { CommonModule } from '@angular/common';
+import { ChildComponent } from './child/child.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { CommonModule } from '@angular/common';
     ProductDetailsComponent,
     CartComponent,
     DashboardComponent,
-    PractiseComponent
+    PractiseComponent,
+    ChildComponent
   ],
   imports: [
     BrowserModule,

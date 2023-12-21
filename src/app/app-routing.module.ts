@@ -7,6 +7,7 @@ import { ProductDetailsComponent } from './product-details/product-details.compo
 import { CartComponent } from './cart/cart.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { PractiseComponent } from './practise/practise.component';
+import { ChildComponent } from './child/child.component';
 
 const routes: Routes = [
   {
@@ -29,7 +30,10 @@ const routes: Routes = [
     path:'dashboard', component:DashboardComponent
   },
   {
-    path:'practise', component:PractiseComponent
+    path:'work', component:PractiseComponent
+  },
+  {
+    path:'child', component:ChildComponent
   },
   {
     path:'product/:productId', component:ProductDetailsComponent

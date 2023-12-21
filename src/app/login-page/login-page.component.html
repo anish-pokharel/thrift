@@ -1,1 +1,24 @@
-<p>login-page works!</p>
+<div class="container mt-4">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="bg-white p-4 rounded-md">
+                <div class="mb-4">
+                    <h1 class="text-xl font-medium pt-4">Create your Suan Account</h1>
+                </div>
+                <div class="row g-3">
+                    <div class="col-md-6">
+                        <label for="name" class="form-label font-medium">name</label>
+                        <input type="text" class="form-control" placeholder="Enter your phone number" [(ngModel)]="loginDataObject.name" >
+                    </div>
+                    <div class="col-md-6">
+                        <label for="password" class="form-label font-medium">Password*</label>
+                        <input type="password" placeholder="xyz@12" class="form-control" [(ngModel)]="loginDataObject.password">
+                    </div>
+                </div>
+                <div class="mt-4">
+                    <button type="submit" class="btn btn-primary w-100" (click)="loginButton()">LOGIN</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

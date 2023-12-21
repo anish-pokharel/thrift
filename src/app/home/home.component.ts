@@ -12,9 +12,8 @@ import { Router } from '@angular/router';
 export class HomeComponent implements OnInit {
   products: any[] = [];
   selectedCategory!: string;
+  // isUserLoggedIn:boolean=true;
   constructor(private productService: ProductService,private router: Router) { }
-
-
 
   ngOnInit(): void {
     this.productService.getProducts().subscribe(

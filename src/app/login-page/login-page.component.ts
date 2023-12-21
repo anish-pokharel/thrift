@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ProductService } from '../apiservice/product.service';
 import { Router } from '@angular/router';
 import * as alertify from 'alertifyjs';
+import { MenuComponent } from '../shared/menu/menu/menu.component';
 
 
 @Component({
@@ -53,6 +54,7 @@ loginButton(){
   if(user){
     this.router.navigate(['/work'])
     alertify.success('login is sucessful ')
+    // this.menuComponent.isUserLoggedIn=false;
   }
   else{
     alertify.error('login failes')

@@ -14,6 +14,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { PractiseComponent } from './practise/practise.component';
 import { CommonModule } from '@angular/common';
 import { ChildComponent } from './child/child.component';
+import { MenuComponent } from './shared/menu/menu/menu.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { ChildComponent } from './child/child.component';
     CartComponent,
     DashboardComponent,
     PractiseComponent,
-    ChildComponent
+    ChildComponent,
+    MenuComponent
   ],
   imports: [
     BrowserModule,

@@ -8,10 +8,15 @@ import { Component, OnInit } from '@angular/core';
 export class DashboardComponent implements OnInit {
   selectedSection: string | null = null;
 
-showSection(section:string){
-  this.selectedSection= section;
-}
+
+  showSection(section: string) {
+    this.selectedSection = section;
+  }
 ngOnInit(): void {
-  this.selectedSection='Item1'
+  this.selectedSection='product'
+}
+
+signout(){
+  
 }
 }

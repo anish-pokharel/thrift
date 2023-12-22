@@ -16,21 +16,31 @@ export class HomeComponent implements OnInit {
   constructor(private productService: ProductService,private router: Router) { }
 
   ngOnInit(): void {
-    this.productService.getProducts().subscribe(
-      (data) => {
-        console.log(data);
-        this.products = data;
-      },
-      (error) => {
-        console.error("error fetching product :", error)
+    // this.productService.getProducts().subscribe(
+    //   (data) => {
+    //     console.log(data);
+    //     this.products = data;
+    //   },
+    //   (error) => {
+    //     console.error("error fetching product :", error)
+    //   }
+    // )
+    this.productService.getProductList().subscribe((data)=>{
+      console.log(data);
+      if(data){
+        console.log("data aayo ")
+        this.products=data
       }
-    )
+      else{
+        console.log("data aayana ")
+      }
+    })
   }
   viewMoreProduct(productId:number){
-    if(productId){
+    // if(productId){
 
-      this.router.navigate(['/product',productId])
-    }
+    //   this.router.navigate(['/product',productId])
+    // }
   }
   buyProduct(){
 

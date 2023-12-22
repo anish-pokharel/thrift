@@ -15,6 +15,7 @@ import { PractiseComponent } from './practise/practise.component';
 import { CommonModule } from '@angular/common';
 import { ChildComponent } from './child/child.component';
 import { MenuComponent } from './shared/menu/menu/menu.component';
+import { DashboardProductComponent } from './dashboard-product/dashboard-product/dashboard-product.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { MenuComponent } from './shared/menu/menu/menu.component';
     DashboardComponent,
     PractiseComponent,
     ChildComponent,
-    MenuComponent
+    MenuComponent,
+    DashboardProductComponent
   ],
   imports: [
     BrowserModule,

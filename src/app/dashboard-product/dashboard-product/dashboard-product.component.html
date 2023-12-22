@@ -1,0 +1,42 @@
+<h2>Product list add </h2>
+<div>
+    <form action="">
+        <div>
+            <label for="productname">Product Name</label>
+            <input type="text" name="productname" placeholder="Enter Product Name" [(ngModel)]="productData.productname" >
+        </div>
+        <div>
+            <label for="price">Price</label>
+            <input type="text" name="price" placeholder="Enter Product Price"[(ngModel)]="productData.price" >
+        </div>
+        <div>
+            <label for="desc">desc</label>
+            <input type="text" name="desc" placeholder="Enter Product Desc"[(ngModel)]="productData.desc" >
+        </div>
+        <div>
+            <label for="image">image</label>
+            <input type="file" name="image" placeholder="Enter Product iMAGE"[(ngModel)]="productData.image" >
+        </div>
+        <button (click)="addProduct()" >Add Product </button>
+
+    </form>
+    <div  >
+        <table>
+            <thead>
+                <th>|Product Name|</th>
+                <th>|Product Price|</th>
+                <th>|Product Status|</th>
+                <th>|Product Remarks|</th>
+            </thead>
+            <tr class="text-center" *ngFor="let data of productListTable">
+                <td>{{data.productname}}</td>
+                <td>{{data.proce}}</td>
+                <td>{{data.status}}</td>
+                <td>
+                        <i (click)="deletePrdouctList(data.id)" class="fa fa-trash" ></i>        
+                </td>
+            </tr>
+
+        </table>
+    </div>
+</div>

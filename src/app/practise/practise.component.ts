@@ -34,21 +34,21 @@ delete(index: number) {
   this.items.splice(index, 1);
 }
 ngOnInit(): void {
-  this.apiservice.getWeather().subscribe((result)=>{
-    console.log(result);
-    this.results=result
+  // this.apiservice.getWeather().subscribe((result)=>{
+  //   console.log(result);
+  //   this.results=result
 
-  },
-  (error)=>{
-    console.error(error)
-  }
-  )
+  // },
+  // (error)=>{
+  //   console.error(error)
+  // }
+  // )
 }
 countryList(){
-  this.apiservice.getCountryList().subscribe((result)=>{
-    console.log(result);
-    this.countrtListshow=result;
-  })
+  // this.apiservice.getCountryList().subscribe((result)=>{
+  //   console.log(result);
+  //   this.countrtListshow=result;
+  // })
 }
 updateChild(){
   this.datas=Math.floor(Math.random()*10);

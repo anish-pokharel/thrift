@@ -19,11 +19,11 @@ export class ProductDetailsComponent implements OnInit{
     private router :Router
     ){}
 ngOnInit(): void {
-  this.route.params.subscribe(params=>{
-    this.productId =+ params['productId'];
-    console.log(this.productId)
-    this.loadProducDetails();
-  })
+  // this.route.params.subscribe(params=>{
+  //   this.productId =+ params['productId'];
+  //   console.log(this.productId)
+  //   this.loadProducDetails();
+  // })
 }
 // loadProducDetails(){
 //   this.productservice.getProductById(this.productId).subscribe(product=>{
@@ -32,14 +32,14 @@ ngOnInit(): void {
 //   })
 // }
 loadProducDetails() {
-  if (this.productId !== undefined) {
-    this.productservice.getProductById(this.productId).subscribe(product => {
-      this.productName = product.title;
-      this.productPrice = product.price;
-      this.productImage=product.image;
-      this.productRate=product.rating.rate;
-    });
-  }
+  // if (this.productId !== undefined) {
+  //   this.productservice.getProductById(this.productId).subscribe(product => {
+  //     this.productName = product.title;
+  //     this.productPrice = product.price;
+  //     this.productImage=product.image;
+  //     this.productRate=product.rating.rate;
+  //   });
+  // }
 }
 increment(){
 this.count++

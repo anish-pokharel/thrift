@@ -1,49 +1,72 @@
-<nav class="navbar fixed-top navbar-expand-md navbar-dark bg-primary mb-3">
-    <div class="flex-row d-flex">
-        <a routerLink="" class="navbar-band nav-link text-light">SU<span>AN</span>
-        </a>
-    </div>
-    <div class="navbar-collapse collapse" id="collapsingNavbar">
-        <ul class="navbar-nav">
-            <li class="nav-item active">
-                <a routerLink="" class="nav-link">Home</a>
+
+
+  <div class="container-fluid">
+    <div class="row">
+      <!-- Sidebar -->
+      <div class="col-md-3 col-lg-2 d-md-block bg-light sidebar d-flex flex-column">
+        <button data-drawer-target="default-sidebar" data-drawer-toggle="default-sidebar"
+          aria-controls="default-sidebar" type="button"
+          class="inline-flex items-center p-2 mt-2 ms-3 text-sm text-gray-500 rounded-lg sm:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600">
+          <span class="sr-only">Open sidebar</span>
+        
+        </button>
+        <div class="sidebar-sticky flex-grow-1">
+          <ul class="nav flex-column">
+            <li class="nav-item">
+              <a class="nav-link" (click)="showSection('overview')">
+                Dashboard
+              </a>
             </li>
             <li class="nav-item">
-                <a routerLink="" class="nav-item">Nav</a>
+              <a class="nav-link" (click)="showSection('products')">
+                Product
+              </a>
             </li>
-        </ul>
-    </div>
-</nav>
-<div class="container-fluid">
-    <div class="row row-offcanvas row-offconvas-left">
-        <div class="col-3  bg-info">
-
-            <ul class="nav flex-column stickt-top pl-0 pt-5 mt-3">
-                <li class="nav-item">
-                    <a class="nav-link" (click)="showSection('Item1')"> Item 1</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" (click)="showSection('Item2')"> Item 2</a>
-                </li>
-            </ul>
-
+            <li class="nav-item">
+              <a class="nav-link" (click)="showSection('order')">
+                Order
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" (click)="showSection('user')">
+                User
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" (click)="signout()">
+                Sign Out
+              </a>
+            </li>
+          </ul>
         </div>
+      </div>
 
-        <div class=" col-9 pt-5  ">
+      <!-- Main Content -->
+      <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+        <div class="b">
+          <!-- Overview Section -->
+          <div *ngIf="selectedSection==='overview'">
+            <h1>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Asperiores enim optio animi reprehenderit
+              perspiciatis libero totam doloribus facilis nulla blanditiis!</h1>
+          </div>
 
-            <div *ngIf="selectedSection === 'Item1'">
-                <!-- Content for Item 1 -->
-                <p>Item 1 Content Goes Here</p>
-            </div>
+          <!-- Product Section -->
+          <div *ngIf="selectedSection==='products'" class="mx-6 my-5">
+          <app-dashboard-product></app-dashboard-product>
+          </div>
 
-            <div *ngIf="selectedSection === 'Item2'">
-                <!-- Content for Item 2 -->
-                <p>Item 2 Content Goes Here</p>
-            </div>
+          <!-- Order Section -->
+          <div *ngIf="selectedSection==='order'" class="my-6 mx-5">
+            <!-- Your order section content here with Bootstrap classes -->
+          </div>
+
+          <!-- User Section -->
+          <div *ngIf="selectedSection==='user'" class="my-6 mx-5">
+            <!-- Your user section content here with Bootstrap classes -->
+          </div>
         </div>
-
+      </main>
     </div>
-</div>
+  </div>
 
-
-<div class="sidebar-bg"></div>
+ 

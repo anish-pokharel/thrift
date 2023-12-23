@@ -33,10 +33,12 @@
                 <td>{{data.proce}}</td>
                 <td>{{data.status}}</td>
                 <td>
-                        <i (click)="deletePrdouctList(data.id)" class="fa fa-trash" ></i>        
+                        <i (click)="deletePrdouctList(data.id)" class="fa fa-trash" ></i>    
+                        <i  (click)="editProductList(data)" class="fa fa-edit"></i>
+    
                 </td>
             </tr>
 
         </table>
     </div>
-</div>
+</div> 

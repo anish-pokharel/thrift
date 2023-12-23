@@ -9,7 +9,9 @@ import * as alertify from 'alertifyjs';
 })
 export class DashboardProductComponent implements OnInit {
   productData: any = {}
-  productListTable:any[] =[]
+  productListTable:any[] =[];
+  editList: boolean =false;
+  editProductId:number |null=null
   constructor(private productApi: ProductService) {
 
   }
@@ -23,6 +25,23 @@ export class DashboardProductComponent implements OnInit {
       desc: this.productData.desc,
       image: this.productData.image
     }
+    if(this.editList && this.editProductId!==null )
+    {
+      this.productApi.updateProduct(this.editProductId, productInfo).subscribe((data) => {
+        console.log(data)
+      if (data) {
+        alertify.success('Product Added')
+      }
+      else {
+        alertify.error("Product failed")
+      }
+      this.editProductId=null;
+      this.editList=false;
+
+
+    })}
+    else{
+
     this.productApi.postproductAddAdmin(productInfo).subscribe((data) => {
       console.log(data)
       if (data) {
@@ -33,6 +52,8 @@ export class DashboardProductComponent implements OnInit {
       }
 
     })
+  }
+
 
   }
   productTable(){
@@ -55,5 +76,15 @@ export class DashboardProductComponent implements OnInit {
       // window.location.reload()
     },
     )
+  }
+  editProductList(product:any){
+    this.editList=true;
+    this.editProductId=product.id;
+    
+
+    this.productData.productname=product.productname;
+    this.productData.price=product.price;
+    this.productData.desc=product.desc;
+    this.productData.image=product.image;
   }
 }

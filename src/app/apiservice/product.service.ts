@@ -31,6 +31,9 @@ deleteProductList(id:number):Observable<any>{
   const deleteUrl=`${this.productDetailsApi}/${id}`
   return this.http.delete(deleteUrl)
 }
+updateProduct(productId:number,productInfo:any):Observable<any>{
+  return this.http.put<any>(`${this.productDetailsApi}${productId}`,productInfo)
+}
 
 
   // getProductById(productId:number):Observable<any>{

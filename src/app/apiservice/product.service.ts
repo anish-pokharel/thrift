@@ -1,23 +1,39 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Router } from '@angular/router';
+import { BehaviorSubject, Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProductService {
+  isUserLoggedIn = new BehaviorSubject <boolean> (false);
   private signupData ="http://localhost:3000/signup" 
   private productDetailsApi ="http://localhost:3000/productData" 
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient,private router:Router) { }
   // getProducts(): Observable<any> {
   //   return this.http.get(this.apiUrl)
   // }
  
 
-  userLogin(data:any):Observable<any>{
-    return this.http.post(this.signupData,data);
+  // auth guard ko logic
+  userLogin(data:any){
+     this.http.post(this.signupData,data,
+      {observe:'response'}).subscribe((result)=>{
+        console.log(result);
+        if(result){
+          this.isUserLoggedIn.next(true)
+          localStorage.setItem('USER ',JSON.stringify(result));
+          this.router.navigate(['/work'])
+        }
+        else{}
+      });
   }
+
+
+
+
  getsignupValue():Observable<any>{
   return this.http.get(this.signupData)
 }

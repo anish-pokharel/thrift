@@ -34,19 +34,19 @@ export class SignupPageComponent implements OnInit {
 this.user.push(this.formData);
 console.log('user data is ',this.user)
 this.formData={};  
-this.apiService.userLogin(signupForm).subscribe((rst)=>{
-  if(rst){
+// this.apiService.userLogin(signupForm).subscribe((rst)=>{
+//   if(rst){
 
-  console.log("data is saved")
-  alertify.success('SignUp sucessfull')
-  this.router.navigate(['/login'])
-}
-else{
-  alertify.error("signup failed")
-  this.router.navigate(['/home'])
-}
+//   console.log("data is saved")
+//   alertify.success('SignUp sucessfull')
+//   this.router.navigate(['/login'])
+// }
+// else{
+//   alertify.error("signup failed")
+//   this.router.navigate(['/home'])
+// }
 
-})
+// })
 }
 
 }
